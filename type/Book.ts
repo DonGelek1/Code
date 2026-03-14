@@ -3,4 +3,6 @@ export type Book = {
    author: string;
    year: number;
    id: number;
+   id2: number;
+   id3: number;
 }
