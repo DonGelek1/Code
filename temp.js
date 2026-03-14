@@ -13,7 +13,7 @@ if (i >= 1) {
    setInterval(() => {
       i = i + 1
       console.log(i++)
-   }, 1)
+   }, 100)
 } else {
    console.log('Значение меньше 1');
    console.log('Выполняется функция');
@@ -21,3 +21,6 @@ if (i >= 1) {
 }
 
 
+function getData() {
+
+}
