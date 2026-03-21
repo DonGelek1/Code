@@ -1,35 +1,51 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Pifagor from './components/Pifagor'
+import Energy from './components/Energy'
+import Cylinder from './components/Cylinder';
+import Logarifm from './components/Logarifm';
+import Quadratic from './components/Quadratic';
+import SumSquare from './components/SumSquare';
+import Water from './components/Water';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+
+  const formulaComponents = [
+    <Energy />,
+    <Pifagor />,
+    <Cylinder />,
+    <Quadratic />,
+    <SumSquare />,
+    <Water />,
+    <Logarifm />,
+  ];
+
+
+
 
   return (
     <>
-      <div>
-        <Pifagor></Pifagor>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      <section className="formula-section">
+        <div className="formula">
+          <h2>Формулы для верстки</h2>
+          <ul>
+            {formulaComponents.map((formula, index) => {
+              return <li key={index}>{index + 1}.  {formula}</li>
+            })}
+          </ul>
+        </div>
+      </section>
+
+      {/* <div className="card">
+        <button onClick={() => setCount((count) => count + 1000)}>
+          count is +
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        <p>{count}</p>
+        <button onClick={() => setCount((count) => count - 1000)}>
+          count is -
+        </button>
+      </div> */}
     </>
   )
 }
